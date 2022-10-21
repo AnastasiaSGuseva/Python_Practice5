@@ -1,19 +1,22 @@
-# 3. Создайте программу для игры в ""Крестики-нолики"".
+"""
+3. Создайте программу для игры в ""Крестики-нолики"".
 
-
+"""
 
 
 matrix = [['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']]
 
+
 def print_matrix(m):
     for i in range(len(m)):
         for j in range(len(m[i])):
-            print(m[i][j], end = '\t')
+            print(m[i][j], end='\t')
         print()
         print()
 
 
 print_matrix(matrix)
+
 
 def matrix_to_string(m):
     mtr_string = ''
@@ -21,6 +24,7 @@ def matrix_to_string(m):
         for j in range(len(m[i])):
             mtr_string += ''.join(m[i][j])
     return mtr_string
+
 
 def win_in_main_diagonal(m, sign):
     status = []
@@ -34,14 +38,17 @@ def win_in_main_diagonal(m, sign):
     else:
         return False
 
+
 def win_in_side_diagonal(m, sign):
     if m[0][2] == sign and m[1][1] == sign and m[2][0] == sign:
         return True
+
 
 def win_in_row(m, sign):
     for i in range(len(m)):
         if m[i] == [sign, sign, sign]:
             return True
+
 
 def win_in_columns(m, sign):
     for i in range(len(m)):
@@ -54,7 +61,6 @@ def win_in_columns(m, sign):
         if status == [True, True, True]:
             return True
             break
-
 
 
 while not matrix_to_string(matrix).isalpha():
@@ -77,7 +83,6 @@ while not matrix_to_string(matrix).isalpha():
     if matrix_to_string(matrix).isalpha():
         print('Ничья!')
         break
-
     pl2i = int(input('Укажите строку для o: '))
     pl2j = int(input('Укажите столбец для o: '))
     matrix[pl2i-1][pl2j-1] = 'o'
@@ -97,6 +102,3 @@ while not matrix_to_string(matrix).isalpha():
     if matrix_to_string(matrix).isalpha():
         print('Ничья!')
         break
-
-
-

@@ -1,10 +1,17 @@
-# Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+"""
+4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 
-str1 = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhheee222111111111'
+"""
+
+
+with open('4_input.txt', 'r') as file:
+    str1 = file.read()
+
+
 str2 = ''
-
-
 i = 0
+
+
 while i != len(str1):
     k = str1.count(str1[i])
     if k < 9:
@@ -19,15 +26,21 @@ while i != len(str1):
                 str2 += '9' + str1[i]
     i += str1.count(str1[i])
 
-print(str2)
+
+with open('4_output1.txt', 'w') as file2:
+    file2.write(str2)
+
 
 str3 = ''
+
+
 for i in range(0, len(str2), 2):
     str3 += (int(str2[i]) * str2[i+1])
 
-print(str3)
 
-print(str1 == str3)
+with open('4_output2.txt', 'w') as file3:
+    file3.write(str3)
+
 
 
 
