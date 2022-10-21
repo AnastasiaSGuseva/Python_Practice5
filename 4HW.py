@@ -40,11 +40,4 @@ for i in range(0, len(str2), 2):
 
 with open('4_output2.txt', 'w') as file3:
     file3.write(str3)
-
-
-
-
-
-
-
-
+    
